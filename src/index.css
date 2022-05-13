@@ -1,8 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat',
+      sans-serif;
+  display: flex;
+  height: 100vh;
+  color: white;
+  justify-content: center;
+  background: radial-gradient(82.33% 70.44% at 50% 0%, #26394D 0%, #212529 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
