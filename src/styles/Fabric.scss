@@ -1,28 +1,60 @@
 .fabric {
   display: grid;
-  grid-template-columns: 60% 30%;
+  grid-template-columns: 10% 40% 40%;
   align-items: center;
+  justify-content: space-around;
+
+  .fabricBorder {
+    opacity: 50%;
+
+    .first {
+      float: top;
+      padding-bottom: 110px;
+    }
+
+    .scroll {
+      transform: rotate(270deg);
+      letter-spacing: 1px;
+    }
+  }
+
+  .fabricHeader {
+    width: 470px;
+    font-size: 56px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  .fabricSubheader {
+    padding-top: 20px;
+    font-size: 24px;
+    color: #a3b8cc;
+    text-align: left;
+  }
 
   .fabricRight {
     display: grid;
-    grid-template-columns: 20% 20% 20%;
+    grid-template-columns: 25% 25% 25%;
 
     .ellipseRobo {
       background-color: #1e2936;
-      width: 275px;
-      height: 275px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      z-index: -1;
+      margin-top: 56px;
+      margin-left: 20px;
     }
 
     .leftRobo {
-      width: 176px;
-      height: 309.31px;
+      height: 450px;
     }
 
     .rightRobo {
-      margin-top: 66px;
-      margin-left: 54px;
-      width: 138.35px;
-      height: 195.89px;
+      margin-top: 86px;
+      margin-left: 10px;
+      height: 320px;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
   }

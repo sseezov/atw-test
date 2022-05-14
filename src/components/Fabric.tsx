@@ -6,13 +6,17 @@ import "../styles/Fabric.scss";
 const Fabric = () => {
   return (
     <div className="fabric">
+      <div className="fabricBorder">
+        <p className="first">01</p>
+        <p className="scroll">← скролл</p>
+      </div>
       <div className="farbicLeft">
-        <h2 className="fabricHeader">Фабрика по производству биороботов</h2>
-        <p className="faricSubheader">класса монитор-кресло</p>
+        <h1 className="fabricHeader">Фабрика по производству биороботов</h1>
+        <p className="fabricSubheader">класса «монитор-кресло»</p>
       </div>
       <div className="fabricRight">
-        <div className="ellipseRobo"></div>
         <img className="leftRobo" src={leftRobo} alt="leftRobo" />
+        <div className="ellipseRobo"></div>
         <img className="rightRobo" src={rightRobo} alt="rightRobo" />
       </div>
     </div>
