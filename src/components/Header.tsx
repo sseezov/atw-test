@@ -1,6 +1,5 @@
 import React from "react";
-import "./../App.scss";
-import pacman from "./../assets/pacman.svg";
+import "./../styles/Header.scss";
 
 const Header = () => {
   return (

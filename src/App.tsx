@@ -1,18 +1,21 @@
 import "./App.scss";
 import Header from "./components/Header";
+import Fabric from "./components/Fabric";
+import Market from "./components/Market";
+import Storage from "./components/Storage";
+import Production from "./components/Production";
+import Purse from "./components/Purse";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <Header />
-
-        <div className="fabric">фабрика по производству биороботов</div>
-
-        <div className="purse">purse</div>
-        <div className="market">market</div>
-        <div className="storage">storage</div>
-        <div className="production">production</div>
+        <Fabric />
+        <Purse />
+        <Market />
+        <Storage />
+        <Production />
       </div>
     </div>
   );

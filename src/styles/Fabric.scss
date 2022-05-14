@@ -1,0 +1,29 @@
+.fabric {
+  display: grid;
+  grid-template-columns: 60% 30%;
+  align-items: center;
+
+  .fabricRight {
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+
+    .ellipseRobo {
+      background-color: #1e2936;
+      width: 275px;
+      height: 275px;
+    }
+
+    .leftRobo {
+      width: 176px;
+      height: 309.31px;
+    }
+
+    .rightRobo {
+      margin-top: 66px;
+      margin-left: 54px;
+      width: 138.35px;
+      height: 195.89px;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+  }
+}
