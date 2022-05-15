@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/Purse.scss";
-import check from "../assets/Vector 22.svg";
 
 const Purse = () => {
   return (

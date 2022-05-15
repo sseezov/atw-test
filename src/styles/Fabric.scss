@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 10% 45% 45%;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
 
   .fabricBorder {
     opacity: 50%;
@@ -10,7 +10,7 @@
     flex-direction: column;
 
     .first {
-      padding-bottom: 150px;
+      padding-bottom: 140px;
       margin-left: -80px;
     }
 
@@ -18,11 +18,13 @@
       transform: rotate(270deg);
       letter-spacing: 1px;
       margin-left: -80px;
+      margin-top: 40px;
       left: 0;
     }
   }
   .farbicLeft {
     padding-left: 20px;
+    padding-top: 40px;
     .fabricHeader {
       font-weight: 500;
       font-size: 54px;
