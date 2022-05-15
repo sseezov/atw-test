@@ -20,7 +20,6 @@ const Purse = () => {
             className="purseGetMoneyCheckbox"
             id="five_coins"
             name="five_coins"
-            value="yes"
           />
           <label className="purseGetMoneyLabel" htmlFor="five_coins">
             Цыганить по 5 монет
