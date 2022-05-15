@@ -9,7 +9,7 @@
 
     .first {
       float: top;
-      padding-bottom: 110px;
+      padding-bottom: 150px;
     }
 
     .scroll {
@@ -20,10 +20,11 @@
 
   .fabricHeader {
     width: 470px;
-    font-size: 56px;
-    font-weight: 600;
+    font-size: 52px;
+    font-weight: 520;
     text-align: left;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    line-height: 60px;
   }
 
   .fabricSubheader {
@@ -39,22 +40,23 @@
 
     .ellipseRobo {
       background-color: #1e2936;
-      width: 300px;
-      height: 300px;
+      width: 270px;
+      height: 270px;
       border-radius: 50%;
       z-index: -1;
-      margin-top: 56px;
-      margin-left: 20px;
+      margin-top: 66px;
+      margin-left: -60px;
     }
 
     .leftRobo {
-      height: 450px;
+      height: 420px;
+      margin-left: -50px;
     }
 
     .rightRobo {
-      margin-top: 86px;
-      margin-left: 10px;
-      height: 320px;
+      margin-top: 116px;
+      margin-left: -40px;
+      height: 270px;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
   }
