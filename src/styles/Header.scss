@@ -1,7 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 48px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 
   .header-btn {
     width: 236px;
@@ -29,7 +30,7 @@
     justify-content: center;
     width: 48px;
     height: 48px;
-    border: solid #ff7f22 24px;
+    border: solid #ff7f22 25px;
     border-radius: 50%;
     box-sizing: border-box;
     border-color: #ff7f22 transparent #ff7f22 #ff7f22;

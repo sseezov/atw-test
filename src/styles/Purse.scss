@@ -1,0 +1,57 @@
+.purse {
+  display: grid;
+  grid-template-columns: 10% 40%;
+
+  .second {
+    opacity: 50%;
+    float: left;
+    margin-top: 10px;
+  }
+
+  .purseLeft {
+    text-align: left;
+    padding-left: 20px;
+
+    .purseHeader {
+      letter-spacing: 1.5px;
+      padding-bottom: 60px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    .purseMoneySubheader {
+      padding-top: 20px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #a3b8cc;
+      text-align: left;
+      padding-bottom: 20px;
+      letter-spacing: 1px;
+    }
+  }
+  .purseGetMoneyBlock {
+    display: flex;
+    flex-direction: row;
+
+    .purseGetMoneyButton {
+      color: #ff7f22;
+      width: 90px;
+      border-bottom: 1px #ff7f22 dotted;
+      margin-right: 20px;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.purseGetMoneyCheckbox + label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}

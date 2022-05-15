@@ -1,37 +1,47 @@
 .fabric {
   display: grid;
-  grid-template-columns: 10% 40% 40%;
+  grid-template-columns: 10% 45% 45%;
   align-items: center;
   justify-content: space-around;
+  padding-bottom: 30px;
 
   .fabricBorder {
     opacity: 50%;
+    display: flex;
+    flex-direction: column;
 
     .first {
-      float: top;
       padding-bottom: 150px;
+      margin-left: -80px;
     }
 
     .scroll {
       transform: rotate(270deg);
       letter-spacing: 1px;
+      margin-left: -80px;
+      left: 0;
     }
   }
+  .farbicLeft {
+    padding-left: 20px;
+    .fabricHeader {
+      font-weight: 500;
+      font-size: 54px;
+      line-height: 72px;
+      width: 470px;
+      text-align: left;
+      letter-spacing: 2px;
+      line-height: 60px;
+      padding-bottom: 20px;
+    }
 
-  .fabricHeader {
-    width: 470px;
-    font-size: 52px;
-    font-weight: 520;
-    text-align: left;
-    letter-spacing: 2px;
-    line-height: 60px;
-  }
-
-  .fabricSubheader {
-    padding-top: 20px;
-    font-size: 24px;
-    color: #a3b8cc;
-    text-align: left;
+    .fabricSubheader {
+      padding-top: 20px;
+      font-size: 24px;
+      color: #a3b8cc;
+      text-align: left;
+      letter-spacing: 1px;
+    }
   }
 
   .fabricRight {
@@ -45,17 +55,16 @@
       border-radius: 50%;
       z-index: -1;
       margin-top: 66px;
-      margin-left: -60px;
+      margin-left: -10px;
     }
 
     .leftRobo {
       height: 420px;
-      margin-left: -50px;
     }
 
     .rightRobo {
       margin-top: 116px;
-      margin-left: -40px;
+      margin-left: -10px;
       height: 270px;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
