@@ -34,24 +34,67 @@
   .purseGetMoneyBlock {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     .purseGetMoneyButton {
       color: #ff7f22;
       width: 90px;
-      border-bottom: 1px #ff7f22 dotted;
+      border-bottom: 1px #ff7f22 solid;
       margin-right: 20px;
       cursor: pointer;
-      font-style: normal;
-      font-weight: 500;
       font-size: 16px;
       line-height: 24px;
+      transform: translateY(2.5px);
+    }
+
+    .purseGetMoneyLabel {
+      padding-top: 5px;
+      margin-left: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #ffffff;
     }
   }
 }
 
+.purseGetMoneyCheckbox {
+  opacity: 0;
+
+  &:checked + label {
+    &::before {
+      border-color: #a3b8cc;
+      background-image: url("../assets/Vector22.svg");
+    }
+  }
+  &:active + label {
+    &::before {
+      border-color: #a3b8cc;
+      background-image: url("../assets/Vector22.svg");
+    }
+  }
+}
 .purseGetMoneyCheckbox + label {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 3px solid #a3b8cc;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+  }
+  &:hover {
+    &::before {
+      border-color: #576370;
+    }
+  }
 }
