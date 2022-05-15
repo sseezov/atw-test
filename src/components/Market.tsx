@@ -16,19 +16,19 @@ const Market = () => {
           <div className="marketItem">
             <img src={biodhand} alt="биорука" />
             <h3>Биорука</h3>
-            <p>Стоимость: $монет</p>
+            <p>Стоимость: 7 монет</p>
             <button>Установить</button>
           </div>
           <div className="marketItem">
             <img src={microchip} alt="микрочип" />
             <h3>Микрочип</h3>
-            <p>Стоимость: $монет</p>
+            <p>Стоимость: 5 монет</p>
             <button>Установить</button>
           </div>
           <div className="marketItem">
             <img src={soul} alt="душа" />
             <h3>Душа</h3>
-            <p>Стоимость: $монет</p>
+            <p>Стоимость: 25 монет</p>
             <button>Установить</button>
           </div>
         </div>

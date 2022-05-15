@@ -8,9 +8,9 @@ const Purse = () => {
         <p className="second">02</p>
       </div>
       <div className="purseLeft">
-        <h2 className="purseHeader">Кошелек криптовалют</h2>
+        <h2 className="purseHeader">Кошелёк криптовалют</h2>
         <div className="purseMoney">00000000000000000000000000000000000000</div>
-        <p className="purseMoneySubheader">45 biorobo монет</p>
+        <p className="purseMoneySubheader">$ biorobo монет</p>
         <div className="purseGetMoneyBlock">
           <p className="purseGetMoneyButton" id="add_one_coin">
             Нацыганить
