@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/Production.scss";
-import hand from "../assets/IconHand.svg";
-import chip from "../assets/IconChip.svg";
-import soul from "../assets/soul.svg";
+import hand from "../assets/hand.svg";
+import chipA from "../assets/chip.svg";
+import chipD from "../assets/chipDisabled.svg";
+import chipM from "../assets/chipMounted.svg";
+import soulA from "../assets/soulAvailable.svg";
+import soulD from "../assets/soulDisabled.svg";
+import soulM from "../assets/soulMounted.svg";
 import robo from "../assets/Designer Male 1.svg";
+import { AppContext } from "../AppContext";
 
 const Production = () => {
+  let { money, setMoney, hands, setHands, chips, setChips, souls, setSouls } =
+    useContext(AppContext);
+
   return (
     <div className="production">
       <div className="productionBorder">
@@ -27,7 +35,7 @@ const Production = () => {
                       name="front"
                       id="radioFront"
                     />
-                    <span className="customRadio"></span>
+                    <span className="customRadio" />
                     FrontEnd
                   </label>
                 </div>
@@ -39,7 +47,7 @@ const Production = () => {
                       name="front"
                       id="radioDesign"
                     />
-                    <span className="customRadio"></span>
+                    <span className="customRadio" />
                     Design
                   </label>
                 </div>
@@ -56,7 +64,7 @@ const Production = () => {
                       id="radioMale"
                       checked
                     />
-                    <span className="customRadio"></span>
+                    <span className="customRadio" />
                     Male
                   </label>
                 </div>
@@ -68,12 +76,12 @@ const Production = () => {
                       name="gender"
                       id="radioFemale"
                     />
-                    <span className="customRadio"></span>
+                    <span className="customRadio" />
                     Female
                   </label>
                 </div>
               </div>
-              <button className="productionButton">
+              <button className="productionButton" disabled={money < 10}>
                 Произвести за 10 монет
               </button>
             </div>
@@ -81,23 +89,42 @@ const Production = () => {
           <div className="productionItem">
             <div className="productionStock">
               <div className="firstRow">
-                <img src={hand} alt="hand" />
-                <img src={hand} alt="hand" />
-                <img src={hand} alt="hand" />
-                <img src={hand} alt="hand" />
+                <button disabled className="testButton">
+                  <img src={hand} alt="hand" />
+                </button>
+                <button>
+                  <img src={hand} alt="hand" />
+                </button>
+                <button>
+                  <img src={hand} alt="hand" />
+                </button>
+                <button>
+                  <img src={hand} alt="hand" />
+                </button>
               </div>
               <div className="secondRow">
-                <img src={hand} alt="hand" />
-                <img src={hand} alt="hand" />
-                <img src={hand} alt="hand" />
-                <img src={hand} alt="hand" />
+                <button>
+                  <img src={chipM} alt="chip" />
+                </button>
+
+                <button>
+                  <img src={chipD} alt="chip" />
+                </button>
+                <button>
+                  <img src={chipD} alt="chip" />
+                </button>
+                <button>
+                  <img src={chipD} alt="chip" />
+                </button>
               </div>
               <div className="thirdRow">
-                <img src={hand} alt="hand" />
+                <button>
+                  <img src={soulD} alt="soul" />
+                </button>
               </div>
             </div>
 
-            <div>
+            <div className="productionNote">
               <p>$note</p>
             </div>
           </div>

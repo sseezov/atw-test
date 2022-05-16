@@ -1,8 +1,6 @@
 .production {
   display: grid;
   grid-template-columns: 10% 90%;
-  padding-bottom: 100px;
-  // align-items: center;
   justify-content: center;
 
   .productionHeader {
@@ -29,6 +27,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+    padding-bottom: 10px;
   }
 
   .productionRadioTypes {
@@ -52,7 +51,7 @@
 
   .productionCols {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 33% 33% 33%;
     align-items: center;
     justify-items: center;
 
@@ -60,22 +59,30 @@
       width: 236px;
       height: 48px;
       margin-top: 26px;
-      border: 2px solid #22b3e3;
+      border: 2px solid #ff7f22;
       border-radius: 60px;
       background: transparent;
       padding-top: 12px;
       padding-bottom: 12px;
       font-size: 16px;
       font-weight: 600;
-      color: #7cdaf9;
+      color: white;
       cursor: pointer;
+      -webkit-transition-duration: 0.3s;
       transition-duration: 0.3s;
       &:hover {
-        background: #7cdaf9;
-        border: 2px solid #7cdaf9;
+        background: #ff7f22;
+        border: 2px solid #ff7f22;
         color: black;
         transition-duration: 0.3s;
-        box-shadow: 0px 10px 40px rgb(39, 102, 123);
+      }
+      &:disabled {
+        color: #4c5865;
+        border: 2px solid #4c5865;
+        border-color: #4c5865;
+        background: transparent;
+        box-shadow: none;
+        cursor: default;
       }
     }
   }
@@ -102,9 +109,20 @@
   padding-bottom: 60px;
   div {
     padding-bottom: 10px;
+    button {
+      background-color: transparent;
+      border: transparent;
+      fill: red;
+      &:disabled {
+        color: #4c5865;
+        border: transparent;
+      }
+    }
 
     img {
       padding-right: 10px;
+      cursor: pointer;
+      fill: red;
     }
   }
 
