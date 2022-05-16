@@ -2,13 +2,13 @@
   display: grid;
   grid-template-columns: 10% 90%;
   padding-bottom: 100px;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
 
   .productionHeader {
     text-align: left;
     padding-left: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     letter-spacing: 1.5px;
     font-style: normal;
     font-weight: 600;
@@ -16,7 +16,15 @@
     line-height: 40px;
   }
 
+  label,
   p {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  h6 {
     text-align: left;
     font-size: 14px;
     font-weight: 500;
@@ -26,15 +34,20 @@
   .productionRadioTypes {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    margin-top: 5px;
     gap: 20px;
     text-align: left;
+
+    .radioType {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .fifth {
     opacity: 50%;
     float: left;
-    margin-top: 10px;
   }
 
   .productionCols {
@@ -83,4 +96,57 @@
       font-size: 20px;
     }
   }
+}
+
+.productionStock {
+  padding-bottom: 60px;
+  div {
+    padding-bottom: 10px;
+
+    img {
+      padding-right: 10px;
+    }
+  }
+
+  .thirdRow {
+    text-align: left;
+  }
+}
+
+.realRadio {
+  display: none;
+}
+
+.customRadio {
+  display: inline-flex;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #a3b8cc;
+  margin-right: 10px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-flex;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff7f22;
+    border-radius: 50%;
+    display: none;
+  }
+}
+
+.realRadio:checked + .customRadio::before {
+  display: block;
+}
+
+.customRadio:hover {
+  border: 2px solid #5d6872;
 }
