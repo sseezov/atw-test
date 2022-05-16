@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../AppContext";
 import "../styles/Storage.scss";
 
 const Storage = () => {
+  let { money, setMoney, hands, setHands, chips, setChips, souls, setSouls } =
+    useContext(AppContext);
+
+  const sellHand = () => {
+    setMoney((money += 5));
+    setHands((hands -= 1));
+  };
+  const sellChip = () => {
+    setMoney((money += 3));
+    setChips((chips -= 1));
+  };
+  const sellSoul = () => {
+    setMoney((money += 15));
+    setSouls((souls -= 1));
+  };
+
   return (
     <div className="storage">
       <div className="storageBorder">
@@ -13,20 +30,38 @@ const Storage = () => {
           <div className="storageItem">
             <h3>Биорука</h3>
             <p>Стоимость: 5 монет</p>
-            <h5>$ шт</h5>
-            <button className="storageButton">Продать</button>
+            <h5>{hands} шт</h5>
+            <button
+              className="storageButton"
+              disabled={hands < 1}
+              onClick={sellHand}
+            >
+              Продать
+            </button>
           </div>
           <div className="storageItem">
             <h3>Микрочип</h3>
             <p>Стоимость: 3 монет</p>
-            <h5>$ шт</h5>
-            <button className="storageButton">Продать</button>
+            <h5>{chips} шт</h5>
+            <button
+              className="storageButton"
+              disabled={chips < 1}
+              onClick={sellChip}
+            >
+              Продать
+            </button>
           </div>
           <div className="storageItem">
             <h3>Душа</h3>
             <p>Стоимость: 15 монет</p>
-            <h5>$ шт</h5>
-            <button className="storageButton">Продать</button>
+            <h5>{souls} шт</h5>
+            <button
+              className="storageButton"
+              disabled={souls < 1}
+              onClick={sellSoul}
+            >
+              Продать
+            </button>
           </div>
         </div>
       </div>

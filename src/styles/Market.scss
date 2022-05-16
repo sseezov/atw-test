@@ -37,6 +37,13 @@
       cursor: pointer;
       -webkit-transition-duration: 0.3s;
       transition-duration: 0.3s;
+      &:disabled {
+        border-color: #4c5865;
+        background: #4c5865;
+        color: #7d90a6;
+        box-shadow: none;
+        cursor: default;
+      }
     }
 
     button:hover {

@@ -10,9 +10,23 @@ import { useState } from "react";
 
 function App() {
   const [money, setMoney] = useState(0);
+  let [hands, setHands] = useState(0);
+  let [chips, setChips] = useState(0);
+  let [souls, setSouls] = useState(0);
 
   return (
-    <AppContext.Provider value={{ money, setMoney }}>
+    <AppContext.Provider
+      value={{
+        money,
+        setMoney,
+        hands,
+        setHands,
+        chips,
+        setChips,
+        souls,
+        setSouls,
+      }}
+    >
       <div className="App">
         <div className="container">
           <Header />

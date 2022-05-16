@@ -46,6 +46,13 @@
         transition-duration: 0.3s;
         box-shadow: 0px 10px 40px rgb(39, 102, 123);
       }
+      &:disabled {
+        border-color: #4c5865;
+        background: transparent;
+        color: #4c5865;
+        box-shadow: none;
+        cursor: default;
+      }
     }
   }
 
