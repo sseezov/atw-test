@@ -5,19 +5,25 @@ import Market from "./components/Market";
 import Storage from "./components/Storage";
 import Production from "./components/Production";
 import Purse from "./components/Purse";
+import { AppContext } from "./AppContext";
+import { useState } from "react";
 
 function App() {
+  const [money, setMoney] = useState(0);
+
   return (
-    <div className="App">
-      <div className="container">
-        <Header />
-        <Fabric />
-        <Purse />
-        <Market />
-        <Storage />
-        <Production />
+    <AppContext.Provider value={{ money, setMoney }}>
+      <div className="App">
+        <div className="container">
+          <Header />
+          <Fabric />
+          <Purse />
+          <Market />
+          <Storage />
+          <Production />
+        </div>
       </div>
-    </div>
+    </AppContext.Provider>
   );
 }
 
