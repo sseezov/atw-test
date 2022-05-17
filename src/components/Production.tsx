@@ -1,18 +1,40 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/Production.scss";
-import hand from "../assets/hand.svg";
-import chipA from "../assets/chip.svg";
+import handD from "../assets/handDisabled.svg";
 import chipD from "../assets/chipDisabled.svg";
-import chipM from "../assets/chipMounted.svg";
-import soulA from "../assets/soulAvailable.svg";
 import soulD from "../assets/soulDisabled.svg";
-import soulM from "../assets/soulMounted.svg";
 import robo from "../assets/Designer Male 1.svg";
+import { stockImg } from "./ImgStorage";
 import { AppContext } from "../AppContext";
 
 const Production = () => {
   let { money, setMoney, hands, setHands, chips, setChips, souls, setSouls } =
     useContext(AppContext);
+
+  let [hand1, setHand1] = useState(false);
+  let [hand2, setHand2] = useState(false);
+  let [hand3, setHand3] = useState(false);
+  let [hand4, setHand4] = useState(false);
+  let [chip1, setChip1] = useState(false);
+  let [chip2, setChip2] = useState(false);
+  let [chip3, setChip3] = useState(false);
+  let [chip4, setChip4] = useState(false);
+  let [soul1, setSoul1] = useState(false);
+
+  let handleStock = (
+    group: number,
+    setGroup: (arg0: number) => void,
+    item: boolean,
+    setItem: (arg0: boolean) => void
+  ) => {
+    if (group > 0 && !item) {
+      setItem(!item);
+      setGroup((group -= 1));
+    } else if (item) {
+      setItem(!item);
+      setGroup((group += 1));
+    }
+  };
 
   return (
     <div className="production">
@@ -89,38 +111,75 @@ const Production = () => {
           <div className="productionItem">
             <div className="productionStock">
               <div className="firstRow">
-                <button disabled className="testButton">
-                  <img src={hand} alt="hand" />
-                </button>
-                <button>
-                  <img src={hand} alt="hand" />
-                </button>
-                <button>
-                  <img src={hand} alt="hand" />
-                </button>
-                <button>
-                  <img src={hand} alt="hand" />
-                </button>
+                <img
+                  onClick={() => {
+                    handleStock(hands, setHands, hand1, setHand1);
+                  }}
+                  src={hands < 1 && !hand1 ? handD : stockImg.hands[+hand1]}
+                  alt="hand"
+                />
+
+                <img
+                  onClick={() => {
+                    handleStock(hands, setHands, hand2, setHand2);
+                  }}
+                  src={hands < 1 && !hand2 ? handD : stockImg.hands[+hand2]}
+                  alt="hand"
+                />
+                <img
+                  onClick={() => {
+                    handleStock(hands, setHands, hand3, setHand3);
+                  }}
+                  src={hands < 1 && !hand3 ? handD : stockImg.hands[+hand3]}
+                  alt="hand"
+                />
+                <img
+                  onClick={() => {
+                    handleStock(hands, setHands, hand4, setHand4);
+                  }}
+                  src={hands < 1 && !hand4 ? handD : stockImg.hands[+hand4]}
+                  alt="hand"
+                />
               </div>
               <div className="secondRow">
-                <button>
-                  <img src={chipM} alt="chip" />
-                </button>
+                <img
+                  onClick={() => {
+                    handleStock(chips, setChips, chip1, setChip1);
+                  }}
+                  src={chips < 1 && !chip1 ? chipD : stockImg.chips[+chip1]}
+                  alt="chip"
+                />
 
-                <button>
-                  <img src={chipD} alt="chip" />
-                </button>
-                <button>
-                  <img src={chipD} alt="chip" />
-                </button>
-                <button>
-                  <img src={chipD} alt="chip" />
-                </button>
+                <img
+                  onClick={() => {
+                    handleStock(chips, setChips, chip2, setChip2);
+                  }}
+                  src={chips < 1 && !chip2 ? chipD : stockImg.chips[+chip2]}
+                  alt="chip"
+                />
+                <img
+                  onClick={() => {
+                    handleStock(chips, setChips, chip3, setChip3);
+                  }}
+                  src={chips < 1 && !chip3 ? chipD : stockImg.chips[+chip3]}
+                  alt="chip"
+                />
+                <img
+                  onClick={() => {
+                    handleStock(chips, setChips, chip4, setChip4);
+                  }}
+                  src={chips < 1 && !chip4 ? chipD : stockImg.chips[+chip4]}
+                  alt="chip"
+                />
               </div>
               <div className="thirdRow">
-                <button>
-                  <img src={soulD} alt="soul" />
-                </button>
+                <img
+                  onClick={() => {
+                    handleStock(souls, setSouls, soul1, setSoul1);
+                  }}
+                  src={souls < 1 && !soul1 ? soulD : stockImg.souls[+soul1]}
+                  alt="soul"
+                />
               </div>
             </div>
 
