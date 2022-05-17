@@ -43,7 +43,12 @@ const Production = () => {
     if (result.length > 2) {
       result.splice(result.length - 1, 0, " и ");
     }
-
+    if (result.length === 5) {
+      result.splice(result.length - 3, 0, ", ");
+    } else if (result.length === 6) {
+      result.splice(result.length - 4, 0, ", ");
+      result.splice(result.length - 3, 0, ", ");
+    }
     return result.join("");
   };
 
