@@ -7,8 +7,17 @@ import { stockImg, Parts, robotsReady, robotsUnready } from "./ImgStorage";
 import { AppContext } from "../AppContext";
 
 const Production = () => {
-  let { money, hands, setHands, chips, setChips, souls, setSouls } =
-    useContext(AppContext);
+  let {
+    money,
+    hands,
+    setHands,
+    chips,
+    setChips,
+    souls,
+    setSouls,
+    modalActive2,
+    setModalActive2,
+  } = useContext(AppContext);
   let [hand1, setHand1] = useState(false);
   let [hand2, setHand2] = useState(false);
   let [hand3, setHand3] = useState(false);
@@ -26,6 +35,10 @@ const Production = () => {
   let [genderMale, setGenderMale] = useState(true);
   let [jobFront, setJobFront] = useState(true);
   let [roboMounted, setRoboMounted] = useState(false);
+  const produceRobo = () => {
+    setRoboMounted(true);
+    setModalActive2(true);
+  };
 
   const string = [
     "Не хватает ",
@@ -176,7 +189,11 @@ const Production = () => {
                   </label>
                 </div>
               </div>
-              <button className="productionButton" disabled={moneyNeeded}>
+              <button
+                className="productionButton"
+                disabled={moneyNeeded}
+                onClick={produceRobo}
+              >
                 Произвести за 10 монет
               </button>
             </div>

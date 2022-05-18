@@ -3,6 +3,7 @@ import "../styles/Purse.scss";
 import { AppContext } from "./../AppContext";
 
 const Purse = () => {
+  const { modalActive1, setModalActive1 } = useContext(AppContext);
   let { money, setMoney } = useContext(AppContext);
   const [five, setFive] = useState(false);
   const getMoney = () => {
@@ -12,7 +13,7 @@ const Purse = () => {
       setMoney((money += 5));
     } else {
       setMoney((money = 100));
-      console.log("больше нельзя");
+      setModalActive1(true);
     }
   };
 

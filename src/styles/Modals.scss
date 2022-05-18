@@ -1,0 +1,151 @@
+.modal2Active {
+  height: 100vh;
+  width: 210vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modalContent {
+    width: 366px;
+    height: 240px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #212529;
+    padding-left: 60px;
+    padding-right: 60px;
+    h2 {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+      padding: 30px;
+      text-align: left;
+    }
+    p {
+      color: #4c5865;
+      padding-left: 30px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    .modal2Button {
+      float: right;
+      padding: 20px;
+      margin-right: -60px;
+      width: 16px;
+      height: 16px;
+      font-size: 20px;
+      color: #ff7f22;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #ff7f22;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #ff7f22;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.modal2Disabled {
+  display: none;
+}
+
+.modal1Active {
+  height: 100vh;
+  width: 210vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modalContent {
+    width: 410px;
+    height: 240px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #212529;
+    padding-left: 30px;
+    padding-right: 30px;
+    h2 {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 40px;
+      padding: 30px;
+      text-align: left;
+    }
+    p {
+      color: #4c5865;
+      padding-left: 74px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      max-width: 300px;
+    }
+
+    .modal1Button {
+      float: right;
+      padding: 20px;
+      margin-right: -40px;
+      width: 16px;
+      height: 16px;
+      font-size: 20px;
+      color: #ff7f22;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #ff7f22;
+        transform: rotate(45deg);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #ff7f22;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.modal1Header {
+  display: flex;
+  font-display: row;
+}
+
+.modal1Disabled {
+  display: none;
+}
