@@ -8,7 +8,7 @@ const Purse = () => {
   const [five, setFive] = useState(false);
   const getMoney = () => {
     if (money < 100 && !five) {
-      setMoney(money++);
+      setMoney((money += 1));
     } else if (money <= 95 && five) {
       setMoney((money += 5));
     } else {
@@ -16,6 +16,14 @@ const Purse = () => {
       setModalActive1(true);
     }
   };
+  function numWord(value: number, words: [string, string, string]) {
+    value = Math.abs(value) % 100;
+    var num = value % 10;
+    if (value > 10 && value < 20) return words[2];
+    if (num > 1 && num < 5) return words[1];
+    if (num === 1) return words[0];
+    return words[2];
+  }
 
   return (
     <div className="purse">
@@ -25,9 +33,15 @@ const Purse = () => {
       <div className="purseLeft">
         <h2 className="purseHeader">Кошелёк криптовалют</h2>
         <div className="purseMoney">00000000000000000000000000000000000000</div>
-        <p className="purseMoneySubheader">{money} biorobo монет</p>
+        <p className="purseMoneySubheader">
+          {numWord(money, [
+            `${money} biorobo монета`,
+            `${money} biorobo монеты`,
+            `${money} biorobo монет`,
+          ])}
+        </p>
         <div className="purseGetMoneyBlock">
-          <p className="purseGetMoneyButton" id="addOneCoin" onClick={getMoney}>
+          <p className="purseGetMoneyButton" onClick={getMoney}>
             Нацыганить
           </p>
           <input

@@ -17,6 +17,8 @@ const Production = () => {
     setSouls,
     modalActive2,
     setModalActive2,
+    roboMounted,
+    setRoboMounted,
   } = useContext(AppContext);
   let [hand1, setHand1] = useState(false);
   let [hand2, setHand2] = useState(false);
@@ -34,20 +36,31 @@ const Production = () => {
   let [productionReady, setProductionReady] = useState(false);
   let [genderMale, setGenderMale] = useState(true);
   let [jobFront, setJobFront] = useState(true);
-  let [roboMounted, setRoboMounted] = useState(false);
   const produceRobo = () => {
     setRoboMounted(true);
     setModalActive2(true);
+    setTimeout(() => {
+      setHand1(false);
+      setHand2(false);
+      setHand3(false);
+      setHand4(false);
+      setChip1(false);
+      setChip2(false);
+      setChip3(false);
+      setChip4(false);
+      setSoul1(false);
+      setHandsNeeded(4);
+      setChipsNeeded(4);
+      setSoulNeeded(1);
+      setProductionReady(false);
+    }, 1000);
   };
 
   const string = [
     "Не хватает ",
     Parts.hands[handsNeeded],
-
     Parts.chips[chipsNeeded],
-
     Parts.souls[soulsNeeded],
-
     Parts.money[+moneyNeeded],
   ];
 
@@ -112,7 +125,7 @@ const Production = () => {
   };
 
   return (
-    <div className="production">
+    <div className="production" id="production">
       <div className="productionBorder">
         <p className="fifth">05</p>
       </div>
@@ -191,7 +204,7 @@ const Production = () => {
               </div>
               <button
                 className="productionButton"
-                disabled={moneyNeeded}
+                disabled={!productionReady}
                 onClick={produceRobo}
               >
                 Произвести за 10 монет

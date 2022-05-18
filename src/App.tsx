@@ -15,6 +15,7 @@ function App() {
   let [hands, setHands] = useState(0);
   let [chips, setChips] = useState(0);
   let [souls, setSouls] = useState(0);
+  let [roboMounted, setRoboMounted] = useState(false);
   const [modalActive1, setModalActive1] = useState(false);
   const [modalActive2, setModalActive2] = useState(false);
 
@@ -33,6 +34,8 @@ function App() {
         setModalActive2,
         modalActive1,
         setModalActive1,
+        roboMounted,
+        setRoboMounted,
       }}
     >
       <div className="App">

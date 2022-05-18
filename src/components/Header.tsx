@@ -11,8 +11,9 @@ const Header = () => {
           <div className="dot"></div>
         </div>
       </div>
-
-      <button className="header-btn">произвести биоробота</button>
+      <a href="#production">
+        <button className="header-btn">произвести биоробота</button>
+      </a>
     </div>
   );
 };

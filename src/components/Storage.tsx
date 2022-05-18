@@ -1,10 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AppContext } from "../AppContext";
 import "../styles/Storage.scss";
 
 const Storage = () => {
-  let { money, setMoney, hands, setHands, chips, setChips, souls, setSouls } =
-    useContext(AppContext);
+  let {
+    money,
+    setMoney,
+    hands,
+    setHands,
+    chips,
+    setChips,
+    souls,
+    setSouls,
+    modalActive1,
+    setModalActive1,
+  } = useContext(AppContext);
+
+  useEffect(() => {
+    if (money > 100) {
+      setMoney(100);
+      setModalActive1(true);
+    }
+  }, [money]);
 
   const sellHand = () => {
     setMoney((money += 5));
