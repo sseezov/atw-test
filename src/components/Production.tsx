@@ -3,14 +3,12 @@ import "../styles/Production.scss";
 import handD from "../assets/handDisabled.svg";
 import chipD from "../assets/chipDisabled.svg";
 import soulD from "../assets/soulDisabled.svg";
-import robo from "../assets/Designer Male 1.svg";
-import { stockImg, Parts } from "./ImgStorage";
+import { stockImg, Parts, robotsReady, robotsUnready } from "./ImgStorage";
 import { AppContext } from "../AppContext";
 
 const Production = () => {
   let { money, hands, setHands, chips, setChips, souls, setSouls } =
     useContext(AppContext);
-
   let [hand1, setHand1] = useState(false);
   let [hand2, setHand2] = useState(false);
   let [hand3, setHand3] = useState(false);
@@ -25,6 +23,10 @@ const Production = () => {
   let [soulsNeeded, setSoulNeeded] = useState(1);
   let [moneyNeeded, setMoneyNeeded] = useState(false);
   let [productionReady, setProductionReady] = useState(false);
+  let [genderMale, setGenderMale] = useState(true);
+  let [jobFront, setJobFront] = useState(true);
+  let [roboMounted, setRoboMounted] = useState(false);
+
   const string = [
     "Не хватает ",
     Parts.hands[handsNeeded],
@@ -111,13 +113,15 @@ const Production = () => {
                 <div>
                   <label className="radioType">
                     <input
-                      checked
                       className="realRadio"
                       type="radio"
                       name="front"
-                      id="radioFront"
+                      value="Front"
                     />
-                    <span className="customRadio" />
+                    <span
+                      className={jobFront ? "radioActive" : "radioDisabled"}
+                      onClick={() => setJobFront(true)}
+                    />
                     FrontEnd
                   </label>
                 </div>
@@ -127,9 +131,12 @@ const Production = () => {
                       className="realRadio"
                       type="radio"
                       name="front"
-                      id="radioDesign"
+                      value="Design"
                     />
-                    <span className="customRadio" />
+                    <span
+                      className="customRadio"
+                      onClick={() => setJobFront(false)}
+                    />
                     Design
                   </label>
                 </div>
@@ -143,10 +150,12 @@ const Production = () => {
                       className="realRadio"
                       type="radio"
                       name="gender"
-                      id="radioMale"
-                      checked
+                      value="Male"
                     />
-                    <span className="customRadio" />
+                    <span
+                      className={genderMale ? "radioActive" : "radioDisabled"}
+                      onClick={() => setGenderMale(true)}
+                    />
                     Male
                   </label>
                 </div>
@@ -156,9 +165,13 @@ const Production = () => {
                       className="realRadio"
                       type="radio"
                       name="gender"
+                      value="Female"
                       id="radioFemale"
                     />
-                    <span className="customRadio" />
+                    <span
+                      className="customRadio"
+                      onClick={() => setGenderMale(false)}
+                    />
                     Female
                   </label>
                 </div>
@@ -313,7 +326,14 @@ const Production = () => {
 
           <div className="productionItem">
             <div className="productionRobo">
-              <img src={robo} alt="robo" />
+              <img
+                src={
+                  productionReady
+                    ? robotsReady[+jobFront][+genderMale][+roboMounted]
+                    : robotsUnready[+jobFront][+genderMale]
+                }
+                alt="robo"
+              />
             </div>
           </div>
         </div>
@@ -323,55 +343,3 @@ const Production = () => {
 };
 
 export default Production;
-
-// let [biomeh, setBiomeh] = useState("биоруки");
-// let [processors, setProcessors] = useState("микрочипа");
-// let [soul, setSoul] = useState("души");
-// let [and, setAnd] = useState("и");
-// let [coins, setCoins] = useState("денег");
-
-// let str = `Для производства биоробота не хватает ${handsNeeded} ${biomeh}, ${chipsNeeded} ${processors}, ${soulsNeeded} ${soul} ${and} ${coins}`;
-
-// useEffect(() => {
-//   if (handsNeeded === 0) {
-//     setBiomeh(" ");
-//   } else if (handsNeeded > 0) {
-//     setBiomeh("биоруки");
-//   }
-// }, [handsNeeded]);
-
-// useEffect(() => {
-//   if (chipsNeeded === 0) {
-//     setProcessors(" ");
-//   } else if (chipsNeeded > 0) {
-//     setProcessors("микрочипа");
-//   }
-// }, [chipsNeeded]);
-
-// useEffect(() => {
-//   if (soulsNeeded === 0) {
-//     setSoul(" ");
-//   } else if (soulsNeeded > 0) {
-//     setSoul("души");
-//   }
-// }, [soulsNeeded]);
-
-// useEffect(() => {
-//   if (money >= 10) {
-//     setCoins(" ");
-//   } else if (money < 10) {
-//     setCoins("денег");
-//   }
-// }, [money]);
-
-// useEffect(() => {
-//   console.log("change");
-// }, [str]);
-
-// const trim = () => {
-//   let arr = str.split(" ");
-//   let result = arr.filter((symbol) => {
-//     return symbol !== "0";
-//   });
-//   return result.join(" ");
-// };

@@ -51,7 +51,7 @@
 
   .productionCols {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 30% 30% 30%;
     align-items: center;
     justify-items: center;
 
@@ -107,18 +107,19 @@
   max-width: 220px;
   min-height: 60px;
   p {
-    margin-top: -10px;
+    margin-top: 25px;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 1px;
-    padding-bottom: 10px;
   }
 }
 
 .productionStock {
-  padding-bottom: 60px;
+  padding-top: 10px;
+  padding-bottom: 30px;
   text-align: left;
+
   div {
     padding-bottom: 10px;
     button {
@@ -139,11 +140,48 @@
   }
 
   .thirdRow {
+    padding-bottom: 0;
   }
 }
 
 .realRadio {
   display: none;
+}
+
+.radioActive {
+  display: inline-flex;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #a3b8cc;
+  margin-right: 10px;
+  cursor: pointer;
+  &::before {
+    content: "";
+    display: inline-flex;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff7f22;
+    border-radius: 50%;
+  }
+}
+
+.radioDisabled {
+  display: inline-flex;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #a3b8cc;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .customRadio {
