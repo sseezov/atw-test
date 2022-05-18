@@ -1,10 +1,22 @@
 import React, { useContext, useState } from "react";
 import "../styles/Purse.scss";
 import { AppContext } from "./../AppContext";
+import { coin } from "./ImgStorage";
 
 const Purse = () => {
   const { modalActive1, setModalActive1 } = useContext(AppContext);
   let { money, setMoney } = useContext(AppContext);
+  const renderCoins = (coin: any) => {
+    let wallet = [];
+    for (let i = 0; i < money; i++) {
+      wallet.push(coin);
+    }
+    let c = wallet.map((x, z) => {
+      return <div style={{ zIndex: 100 - z }}>{x}</div>;
+    });
+    return c;
+  };
+
   const [five, setFive] = useState(false);
   const getMoney = () => {
     if (money < 100 && !five) {
@@ -32,7 +44,8 @@ const Purse = () => {
       </div>
       <div className="purseLeft">
         <h2 className="purseHeader">Кошелёк криптовалют</h2>
-        <div className="purseMoney">00000000000000000000000000000000000000</div>
+        <div className="purseMoney">{renderCoins(coin)}</div>
+
         <p className="purseMoneySubheader">
           {numWord(money, [
             `${money} biorobo монета`,
