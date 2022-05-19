@@ -8,16 +8,24 @@
     opacity: 50%;
     display: flex;
     flex-direction: column;
+    transform: translateY(12%);
 
     .first {
-      padding-bottom: 140px;
+      padding-bottom: 130px;
       margin-left: -80px;
     }
 
     .scroll {
       transform: rotate(270deg);
-      letter-spacing: 1px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       margin-left: -80px;
+      margin-top: 40px;
+      left: 0;
+    }
+    .arrow {
+      transform: rotate(270deg);
+      margin-left: -83px;
       margin-top: 40px;
       left: 0;
     }

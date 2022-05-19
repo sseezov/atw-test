@@ -39,6 +39,7 @@
       color: #7cdaf9;
       cursor: pointer;
       transition-duration: 0.3s;
+      transition: 0.3s ease-in-out;
       &:hover {
         background: #7cdaf9;
         border: 2px solid #7cdaf9;
@@ -52,6 +53,11 @@
         color: #4c5865;
         box-shadow: none;
         cursor: default;
+      }
+      &:active {
+        border: 2px solid #22b3e3;
+        background: transparent;
+        color: #7cdaf9;
       }
     }
   }

@@ -12,7 +12,11 @@ const Purse = () => {
       wallet.push(coin);
     }
     let c = wallet.map((x, z) => {
-      return <div style={{ zIndex: 100 - z }}>{x}</div>;
+      return (
+        <div key={z} style={{ zIndex: 100 - z }}>
+          {x}
+        </div>
+      );
     });
     return c;
   };

@@ -8,7 +8,8 @@ const Fabric = () => {
     <div className="fabric">
       <div className="fabricBorder">
         <p className="first">01</p>
-        <p className="scroll">← скролл</p>
+        <p className="scroll"> скролл</p>
+        <p className="arrow">←</p>
       </div>
       <div className="farbicLeft">
         <h1 className="fabricHeader">Фабрика по производству биороботов</h1>
