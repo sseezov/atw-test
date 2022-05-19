@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../styles/Production.scss";
-import handD from "../assets/handDisabled.svg";
-import chipD from "../assets/chipDisabled.svg";
-import soulD from "../assets/soulDisabled.svg";
-import { stockImg, Parts, robotsReady, robotsUnready } from "./ImgStorage";
+import {
+  chipD,
+  handD,
+  soulD,
+  stockImg,
+  Parts,
+  robotsReady,
+  robotsUnready,
+} from "./AppStorage";
 import { AppContext } from "../AppContext";
 
 const Production = () => {
@@ -31,7 +36,7 @@ const Production = () => {
   let [soul1, setSoul1] = useState(false);
   let [handsNeeded, setHandsNeeded] = useState(4);
   let [chipsNeeded, setChipsNeeded] = useState(4);
-  let [soulsNeeded, setSoulNeeded] = useState(1);
+  let [soulsNeeded, setSoulsNeeded] = useState(1);
   let [moneyNeeded, setMoneyNeeded] = useState(false);
   let [productionReady, setProductionReady] = useState(false);
   let [genderMale, setGenderMale] = useState(true);
@@ -51,7 +56,7 @@ const Production = () => {
       setSoul1(false);
       setHandsNeeded(4);
       setChipsNeeded(4);
-      setSoulNeeded(1);
+      setSoulsNeeded(1);
       setProductionReady(false);
     }, 1000);
   };
@@ -105,6 +110,10 @@ const Production = () => {
       setProductionReady(false);
   }, [handsNeeded, chipsNeeded, soulsNeeded, money]);
 
+  useEffect(() => {
+    console.log(+jobFront, +genderMale);
+  }, [genderMale, jobFront]);
+
   let handleStock = (
     group: number,
     setGroup: (arg0: number) => void,
@@ -129,7 +138,7 @@ const Production = () => {
       <div className="productionBorder">
         <p className="fifth">05</p>
       </div>
-      <div>
+      <div className="productionBlock">
         <h3 className="productionHeader">Производство</h3>
         <div className="productionCols">
           <div className="productionItem">
@@ -160,7 +169,7 @@ const Production = () => {
                       value="Design"
                     />
                     <span
-                      className="customRadio"
+                      className={jobFront ? "radioDisabled" : "radioActive"}
                       onClick={() => setJobFront(false)}
                     />
                     Design
@@ -195,7 +204,7 @@ const Production = () => {
                       id="radioFemale"
                     />
                     <span
-                      className="customRadio"
+                      className={genderMale ? "radioDisabled" : "radioActive"}
                       onClick={() => setGenderMale(false)}
                     />
                     Female
@@ -214,7 +223,8 @@ const Production = () => {
           <div className="productionItem">
             <div className="productionStock">
               <div className="firstRow">
-                <img
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       hands,
@@ -225,11 +235,12 @@ const Production = () => {
                       setHandsNeeded
                     );
                   }}
-                  src={hands < 1 && !hand1 ? handD : stockImg.hands[+hand1]}
-                  alt="hand"
-                />
+                >
+                  {hands < 1 && !hand1 ? handD : stockImg.hands[+hand1]}
+                </div>
 
-                <img
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       hands,
@@ -240,10 +251,12 @@ const Production = () => {
                       setHandsNeeded
                     );
                   }}
-                  src={hands < 1 && !hand2 ? handD : stockImg.hands[+hand2]}
-                  alt="hand"
-                />
-                <img
+                >
+                  {hands < 1 && !hand2 ? handD : stockImg.hands[+hand2]}
+                </div>
+
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       hands,
@@ -254,10 +267,12 @@ const Production = () => {
                       setHandsNeeded
                     );
                   }}
-                  src={hands < 1 && !hand3 ? handD : stockImg.hands[+hand3]}
-                  alt="hand"
-                />
-                <img
+                >
+                  {hands < 1 && !hand3 ? handD : stockImg.hands[+hand3]}
+                </div>
+
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       hands,
@@ -268,12 +283,13 @@ const Production = () => {
                       setHandsNeeded
                     );
                   }}
-                  src={hands < 1 && !hand4 ? handD : stockImg.hands[+hand4]}
-                  alt="hand"
-                />
+                >
+                  {hands < 1 && !hand4 ? handD : stockImg.hands[+hand4]}
+                </div>
               </div>
               <div className="secondRow">
-                <img
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       chips,
@@ -284,11 +300,12 @@ const Production = () => {
                       setChipsNeeded
                     );
                   }}
-                  src={chips < 1 && !chip1 ? chipD : stockImg.chips[+chip1]}
-                  alt="chip"
-                />
+                >
+                  {chips < 1 && !chip1 ? chipD : stockImg.chips[+chip1]}
+                </div>
 
-                <img
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       chips,
@@ -299,10 +316,12 @@ const Production = () => {
                       setChipsNeeded
                     );
                   }}
-                  src={chips < 1 && !chip2 ? chipD : stockImg.chips[+chip2]}
-                  alt="chip"
-                />
-                <img
+                >
+                  {chips < 1 && !chip2 ? chipD : stockImg.chips[+chip2]}
+                </div>
+
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       chips,
@@ -313,10 +332,12 @@ const Production = () => {
                       setChipsNeeded
                     );
                   }}
-                  src={chips < 1 && !chip3 ? chipD : stockImg.chips[+chip3]}
-                  alt="chip"
-                />
-                <img
+                >
+                  {chips < 1 && !chip3 ? chipD : stockImg.chips[+chip3]}
+                </div>
+
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       chips,
@@ -327,12 +348,13 @@ const Production = () => {
                       setChipsNeeded
                     );
                   }}
-                  src={chips < 1 && !chip4 ? chipD : stockImg.chips[+chip4]}
-                  alt="chip"
-                />
+                >
+                  {chips < 1 && !chip4 ? chipD : stockImg.chips[+chip4]}
+                </div>
               </div>
               <div className="thirdRow">
-                <img
+                <div
+                  className="img"
                   onClick={() => {
                     handleStock(
                       souls,
@@ -340,12 +362,12 @@ const Production = () => {
                       soul1,
                       setSoul1,
                       soulsNeeded,
-                      setSoulNeeded
+                      setSoulsNeeded
                     );
                   }}
-                  src={souls < 1 && !soul1 ? soulD : stockImg.souls[+soul1]}
-                  alt="soul"
-                />
+                >
+                  {souls < 1 && !soul1 ? soulD : stockImg.souls[+soul1]}
+                </div>
               </div>
             </div>
 
@@ -356,14 +378,9 @@ const Production = () => {
 
           <div className="productionItem">
             <div className="productionRobo">
-              <img
-                src={
-                  productionReady
-                    ? robotsReady[+jobFront][+genderMale][+roboMounted]
-                    : robotsUnready[+jobFront][+genderMale]
-                }
-                alt="robo"
-              />
+              {productionReady
+                ? robotsReady[+jobFront][+genderMale][+roboMounted]
+                : robotsUnready[+jobFront][+genderMale]}
             </div>
           </div>
         </div>

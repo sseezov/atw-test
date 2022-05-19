@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../AppContext";
-import coin from "../assets/coin.svg";
+// import coin from "../assets/coin.svg";
+import { coin } from "./AppStorage";
 
 const Modal1 = () => {
   const { modalActive1, setModalActive1 } = useContext(AppContext);
@@ -14,7 +15,7 @@ const Modal1 = () => {
           className="modal1Button"
         />
         <div className="modal1Header">
-          <img src={coin} alt="coin" />
+          <div className="modalCoin">{coin}</div>
           <h2>Количество монет ограничено</h2>
         </div>
 

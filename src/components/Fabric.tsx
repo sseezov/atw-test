@@ -1,7 +1,6 @@
 import React from "react";
-import rightRobo from "./../assets/Designer Male 1.svg";
-import leftRobo from "./../assets/Front Male 1.svg";
 import "../styles/Fabric.scss";
+import { leftRobo, rightRobo } from "../components/AppStorage";
 
 const Fabric = () => {
   return (
@@ -16,9 +15,9 @@ const Fabric = () => {
         <p className="fabricSubheader">класса «монитор-кресло»</p>
       </div>
       <div className="fabricRight">
-        <img className="leftRobo" src={leftRobo} alt="leftRobo" />
+        <div className="leftRobo">{leftRobo}</div>
         <div className="ellipseRobo"></div>
-        <img className="rightRobo" src={rightRobo} alt="rightRobo" />
+        <div className="rightRobo">{rightRobo}</div>
       </div>
     </div>
   );

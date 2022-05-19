@@ -4,6 +4,7 @@ import biodhand from "../assets/biohand.svg";
 import microchip from "../assets/microchip.svg";
 import soul from "../assets/soulBig.svg";
 import { AppContext } from "../AppContext";
+import { market } from "./AppStorage";
 
 const Market = () => {
   let { money, setMoney, hands, setHands, chips, setChips, souls, setSouls } =
@@ -30,7 +31,7 @@ const Market = () => {
         <h3 className="marketHeader">Рынок комплектующих</h3>
         <div className="marketCols">
           <div className="marketItem">
-            <img src={biodhand} alt="биорука" />
+            <div>{market.biohand}</div>
             <h3>Биорука</h3>
             <p>Стоимость: 7 монет</p>
             <button disabled={money < 7} onClick={getHand}>
@@ -38,7 +39,7 @@ const Market = () => {
             </button>
           </div>
           <div className="marketItem">
-            <img src={microchip} alt="микрочип" />
+            <div>{market.chip}</div>
             <h3>Микрочип</h3>
             <p>Стоимость: 5 монет</p>
             <button disabled={money < 5} onClick={getChip}>
@@ -46,7 +47,7 @@ const Market = () => {
             </button>
           </div>
           <div className="marketItem">
-            <img src={soul} alt="душа" />
+            <div>{market.soul}</div>
             <h3>Душа</h3>
             <p>Стоимость: 25 монет</p>
             <button disabled={money < 25} onClick={getSoul}>

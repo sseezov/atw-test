@@ -66,6 +66,7 @@
     flex-direction: row;
     z-index: 0;
     margin-left: 9px;
+    min-height: 30px;
     svg {
       height: 20px;
       width: 16px;
@@ -101,7 +102,7 @@
   &:active + label {
     &::before {
       border-color: #a3b8cc;
-      background-image: url("../assets/Vector22.svg");
+      background-image: src("../assets/Vector22.svg");
     }
   }
 }

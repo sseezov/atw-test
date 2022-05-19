@@ -124,7 +124,7 @@
   text-align: left;
 
   div {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     button {
       background-color: transparent;
       border: transparent;
@@ -135,15 +135,24 @@
       }
     }
 
-    img {
+    .img {
       padding-right: 10px;
       cursor: pointer;
-      fill: red;
     }
   }
 
+  .firstRow {
+    display: flex;
+    flex-direction: row;
+  }
+  .secondRow {
+    display: flex;
+    flex-direction: row;
+  }
   .thirdRow {
     padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
   }
 }
 

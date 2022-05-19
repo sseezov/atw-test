@@ -1,20 +1,21 @@
 import React, { useContext, useState } from "react";
 import "../styles/Purse.scss";
 import { AppContext } from "./../AppContext";
-import { coin } from "./ImgStorage";
+import { coin } from "./AppStorage";
 
 const Purse = () => {
   const { modalActive1, setModalActive1 } = useContext(AppContext);
   let { money, setMoney } = useContext(AppContext);
+
   const renderCoins = (coin: any) => {
     let wallet = [];
     for (let i = 0; i < money; i++) {
       wallet.push(coin);
     }
-    let c = wallet.map((x, z) => {
+    let c = wallet.map((item, z) => {
       return (
         <div key={z} style={{ zIndex: 100 - z }}>
-          {x}
+          {item}
         </div>
       );
     });
