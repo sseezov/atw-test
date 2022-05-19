@@ -20,10 +20,7 @@ const Production = () => {
     setChips,
     souls,
     setSouls,
-    modalActive2,
     setModalActive2,
-    roboMounted,
-    setRoboMounted,
   } = useContext(AppContext);
   let [hand1, setHand1] = useState(false);
   let [hand2, setHand2] = useState(false);
@@ -41,6 +38,7 @@ const Production = () => {
   let [productionReady, setProductionReady] = useState(false);
   let [genderMale, setGenderMale] = useState(true);
   let [jobFront, setJobFront] = useState(true);
+  let [roboMounted, setRoboMounted] = useState(false);
   const produceRobo = () => {
     setRoboMounted(true);
     setModalActive2(true);
@@ -58,8 +56,11 @@ const Production = () => {
       setChipsNeeded(4);
       setSoulsNeeded(1);
       setProductionReady(false);
+      setRoboMounted(false);
     }, 1000);
   };
+
+  //Ниже представлена исходная строка и следом функция, которая выводит сообщение о недостающих запчастях
 
   const string = [
     "Не хватает ",
@@ -69,9 +70,9 @@ const Production = () => {
     Parts.money[+moneyNeeded],
   ];
 
-  const trim = () => {
-    let result = string.filter((x) => {
-      return x;
+  const showNotification = () => {
+    let result = string.filter((word) => {
+      return word;
     });
     if (result.length > 2) {
       result.splice(result.length - 1, 0, " и ");
@@ -110,9 +111,7 @@ const Production = () => {
       setProductionReady(false);
   }, [handsNeeded, chipsNeeded, soulsNeeded, money]);
 
-  useEffect(() => {
-    console.log(+jobFront, +genderMale);
-  }, [genderMale, jobFront]);
+  //Здесь ниже представлена функция высшего порядка, которая принимает другие функции и управляется с ними. В частности, принимает запчасти и считает их, смотря по вмонтированным или размонтированным механизмам
 
   let handleStock = (
     group: number,
@@ -141,6 +140,7 @@ const Production = () => {
       <div className="productionBlock">
         <h3 className="productionHeader">Производство</h3>
         <div className="productionCols">
+          {/* Первый блок слева - радиокнопки */}
           <div className="productionItem">
             <div className="productionRadio">
               <h6 className="productionTypeRobo">Тип биоробота:</h6>
@@ -153,6 +153,7 @@ const Production = () => {
                       name="front"
                       value="Front"
                     />
+                    {/* сначала я сделал радиокнопки с помощью псевдоэлементов, но потом перешел на этот способ, потому что они не всегда адекватно реагировали */}
                     <span
                       className={jobFront ? "radioActive" : "radioDisabled"}
                       onClick={() => setJobFront(true)}
@@ -220,6 +221,7 @@ const Production = () => {
               </button>
             </div>
           </div>
+          {/* Средний блок с запчастями */}
           <div className="productionItem">
             <div className="productionStock">
               <div className="firstRow">
@@ -372,10 +374,14 @@ const Production = () => {
             </div>
 
             <div className="productionNote">
-              <p>{productionReady ? "Все готово к производству" : trim()}</p>
+              <p>
+                {productionReady
+                  ? "Все готово к производству"
+                  : showNotification()}
+              </p>
             </div>
           </div>
-
+          {/* Третий блок с роботом */}
           <div className="productionItem">
             <div className="productionRobo">
               {productionReady

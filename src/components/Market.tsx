@@ -1,8 +1,5 @@
 import React, { useContext } from "react";
 import "./../styles/Market.scss";
-import biodhand from "../assets/biohand.svg";
-import microchip from "../assets/microchip.svg";
-import soul from "../assets/soulBig.svg";
 import { AppContext } from "../AppContext";
 import { market } from "./AppStorage";
 

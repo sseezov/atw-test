@@ -12,7 +12,7 @@ const Header = () => {
         </div>
       </div>
       <a href="#production">
-        <button className="header-btn">произвести биоробота</button>
+        <button className="header-btn">Произвести биоробота</button>
       </a>
     </div>
   );

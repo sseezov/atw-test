@@ -12,7 +12,6 @@ const Storage = () => {
     setChips,
     souls,
     setSouls,
-    modalActive1,
     setModalActive1,
   } = useContext(AppContext);
 
@@ -21,7 +20,7 @@ const Storage = () => {
       setMoney(100);
       setModalActive1(true);
     }
-  }, [money]);
+  }, [money, setMoney, setModalActive1]);
 
   const sellHand = () => {
     setMoney((money += 5));
@@ -58,7 +57,7 @@ const Storage = () => {
           </div>
           <div className="storageItem">
             <h3>Микрочип</h3>
-            <p>Стоимость: 3 монет</p>
+            <p>Стоимость: 3 монеты</p>
             <h5>{chips} шт</h5>
             <button
               className="storageButton"

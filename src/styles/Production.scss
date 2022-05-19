@@ -182,6 +182,9 @@
     background: #ff7f22;
     border-radius: 50%;
   }
+  &:hover {
+    border: 2px solid #5d6872;
+  }
 }
 
 .radioDisabled {
@@ -194,38 +197,7 @@
   border: 2px solid #a3b8cc;
   margin-right: 10px;
   cursor: pointer;
-}
-
-.customRadio {
-  display: inline-flex;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  border-radius: 50%;
-  border: 2px solid #a3b8cc;
-  margin-right: 10px;
-  cursor: pointer;
-
-  &::before {
-    content: "";
-    display: inline-flex;
-    width: 21px;
-    height: 21px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: #ff7f22;
-    border-radius: 50%;
-    display: none;
+  &:hover {
+    border: 2px solid #5d6872;
   }
-}
-
-.realRadio:checked + .customRadio::before {
-  display: block;
-}
-
-.customRadio:hover {
-  border: 2px solid #5d6872;
 }

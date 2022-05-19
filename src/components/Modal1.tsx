@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { AppContext } from "../AppContext";
-// import coin from "../assets/coin.svg";
 import { coin } from "./AppStorage";
 
 const Modal1 = () => {

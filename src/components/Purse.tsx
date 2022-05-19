@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { ReactNode, useContext, useState } from "react";
 import "../styles/Purse.scss";
 import { AppContext } from "./../AppContext";
 import { coin } from "./AppStorage";
 
 const Purse = () => {
-  const { modalActive1, setModalActive1 } = useContext(AppContext);
-  let { money, setMoney } = useContext(AppContext);
+  let { setModalActive1, money, setMoney } = useContext(AppContext);
+  const [five, setFive] = useState(false);
 
-  const renderCoins = (coin: any) => {
+  const renderCoins = (coin: ReactNode) => {
     let wallet = [];
     for (let i = 0; i < money; i++) {
       wallet.push(coin);
@@ -22,7 +22,6 @@ const Purse = () => {
     return c;
   };
 
-  const [five, setFive] = useState(false);
   const getMoney = () => {
     if (money < 100 && !five) {
       setMoney((money += 1));
@@ -33,6 +32,7 @@ const Purse = () => {
       setModalActive1(true);
     }
   };
+
   function numWord(value: number, words: [string, string, string]) {
     value = Math.abs(value) % 100;
     var num = value % 10;
