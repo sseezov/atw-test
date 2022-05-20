@@ -5,7 +5,7 @@ import { coin } from "./AppStorage";
 
 const Purse: React.FC = () => {
   let { setModalActive1, money, setMoney } = useContext(AppContext);
-  const [five, setFive] = useState(false);
+  const [five, setFive] = useState<boolean>(false);
 
   const renderCoins = (coin: ReactNode) => {
     let wallet = [];

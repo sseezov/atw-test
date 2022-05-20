@@ -22,23 +22,25 @@ const Production: React.FC = () => {
     setSouls,
     setModalActive2,
   } = useContext(AppContext);
-  let [hand1, setHand1] = useState(false);
-  let [hand2, setHand2] = useState(false);
-  let [hand3, setHand3] = useState(false);
-  let [hand4, setHand4] = useState(false);
-  let [chip1, setChip1] = useState(false);
-  let [chip2, setChip2] = useState(false);
-  let [chip3, setChip3] = useState(false);
-  let [chip4, setChip4] = useState(false);
-  let [soul1, setSoul1] = useState(false);
-  let [handsNeeded, setHandsNeeded] = useState(4);
-  let [chipsNeeded, setChipsNeeded] = useState(4);
-  let [soulsNeeded, setSoulsNeeded] = useState(1);
-  let [moneyNeeded, setMoneyNeeded] = useState(false);
-  let [productionReady, setProductionReady] = useState(false);
-  let [genderMale, setGenderMale] = useState(true);
-  let [jobFront, setJobFront] = useState(true);
-  let [roboMounted, setRoboMounted] = useState(false);
+  let [hand1, setHand1] = useState<boolean>(false);
+  let [hand2, setHand2] = useState<boolean>(false);
+  let [hand3, setHand3] = useState<boolean>(false);
+  let [hand4, setHand4] = useState<boolean>(false);
+  let [chip1, setChip1] = useState<boolean>(false);
+  let [chip2, setChip2] = useState<boolean>(false);
+  let [chip3, setChip3] = useState<boolean>(false);
+  let [chip4, setChip4] = useState<boolean>(false);
+  let [soul1, setSoul1] = useState<boolean>(false);
+  let [handsNeeded, setHandsNeeded] = useState<number>(4);
+  let [chipsNeeded, setChipsNeeded] = useState<number>(4);
+  let [soulsNeeded, setSoulsNeeded] = useState<number>(1);
+  let [moneyNeeded, setMoneyNeeded] = useState<boolean>(false);
+  let [productionReady, setProductionReady] = useState<boolean>(false);
+  let [genderMale, setGenderMale] = useState<boolean>(true);
+  let [jobFront, setJobFront] = useState<boolean>(true);
+  let [roboMounted, setRoboMounted] = useState<boolean>(false);
+
+  //функция ниже хэндлит производство роботов после первого выпуска
   const produceRobo = () => {
     setRoboMounted(true);
     setModalActive2(true);
@@ -61,7 +63,6 @@ const Production: React.FC = () => {
   };
 
   //Ниже представлена исходная строка и следом функция, которая выводит сообщение о недостающих запчастях
-
   const string = [
     "Не хватает ",
     Parts.hands[handsNeeded],
@@ -140,7 +141,7 @@ const Production: React.FC = () => {
       <div className="productionBlock">
         <h3 className="productionHeader">Производство</h3>
         <div className="productionCols">
-          {/* Первый блок слева - радиокнопки */}
+          {/* Первый блок слева: радиокнопки */}
           <div className="productionItem">
             <div className="productionRadio">
               <h6 className="productionTypeRobo">Тип биоробота:</h6>
@@ -221,6 +222,7 @@ const Production: React.FC = () => {
               </button>
             </div>
           </div>
+
           {/* Средний блок с запчастями */}
           <div className="productionItem">
             <div className="productionStock">
@@ -381,6 +383,7 @@ const Production: React.FC = () => {
               </p>
             </div>
           </div>
+
           {/* Третий блок с роботом */}
           <div className="productionItem">
             <div className="productionRobo">

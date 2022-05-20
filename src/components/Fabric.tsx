@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Fabric.scss";
 import { leftRobo, rightRobo } from "../components/AppStorage";
 
-const Fabric = () => {
+const Fabric: React.FC = () => {
   return (
     <div className="fabric">
       <div className="fabricBorder">

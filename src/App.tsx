@@ -12,12 +12,12 @@ import Modal1 from "./components/Modal1";
 
 function App() {
   // Здесь задается импровизированный стейт-менеджмент. Я посчитал, что так, через хук useContext, будет быстрее и проще чем подключать Редакс
-  const [money, setMoney] = useState(0);
-  const [hands, setHands] = useState(0);
-  let [chips, setChips] = useState(0);
-  let [souls, setSouls] = useState(0);
-  const [modalActive1, setModalActive1] = useState(false);
-  const [modalActive2, setModalActive2] = useState(false);
+  const [money, setMoney] = useState<number>(0);
+  const [hands, setHands] = useState<number>(0);
+  let [chips, setChips] = useState<number>(0);
+  let [souls, setSouls] = useState<number>(0);
+  const [modalActive1, setModalActive1] = useState<boolean>(false);
+  const [modalActive2, setModalActive2] = useState<boolean>(false);
 
   return (
     <AppContext.Provider
