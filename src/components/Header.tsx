@@ -1,7 +1,7 @@
 import React from "react";
 import "./../styles/Header.scss";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="pacman">

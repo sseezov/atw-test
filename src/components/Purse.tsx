@@ -3,7 +3,7 @@ import "../styles/Purse.scss";
 import { AppContext } from "./../AppContext";
 import { coin } from "./AppStorage";
 
-const Purse = () => {
+const Purse: React.FC = () => {
   let { setModalActive1, money, setMoney } = useContext(AppContext);
   const [five, setFive] = useState(false);
 

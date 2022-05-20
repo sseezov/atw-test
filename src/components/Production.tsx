@@ -11,7 +11,7 @@ import {
 } from "./AppStorage";
 import { AppContext } from "../AppContext";
 
-const Production = () => {
+const Production: React.FC = () => {
   let {
     money,
     hands,

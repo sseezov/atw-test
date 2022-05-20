@@ -1,6 +1,22 @@
+interface innerObj {
+  [key: number | string]: JSX.Element | string;
+}
+
+interface innerObj2 {
+  [key: number]: innerObj;
+}
+
+interface StockData {
+  [key: string | number]: innerObj;
+}
+
+interface StockImgsLarger {
+  [key: number]: innerObj2;
+}
+
 //Сразу ниже исходные строки для вывода оповещения о нехватке запчастей. Я решил, что так будет удобнее, чем вешать функцию на каждое слово
 
-export const Parts: any = {
+export const Parts: StockData = {
   hands: {
     0: "",
     1: "одного биомеханизма",
@@ -28,7 +44,7 @@ export const Parts: any = {
 // ниже svg hell
 // объекты с картинками, которые запрашиваются на странице продакшн, находятся в самом низу.
 
-export const leftRobo = (
+export const leftRobo: JSX.Element = (
   <svg
     width="156"
     height="310"
@@ -63,7 +79,7 @@ export const leftRobo = (
   </svg>
 );
 
-export const rightRobo = (
+export const rightRobo: JSX.Element = (
   <svg
     height="290"
     viewBox="0 0 236 320"
@@ -94,7 +110,7 @@ export const rightRobo = (
   </svg>
 );
 
-export const market = {
+export const market: innerObj = {
   biohand: (
     <svg
       width="281"
@@ -340,7 +356,7 @@ export const market = {
   ),
 };
 
-const handAvailable = (
+const handAvailable: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -372,7 +388,7 @@ const handAvailable = (
   </svg>
 );
 
-const handMounted = (
+const handMounted: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -412,7 +428,7 @@ const handMounted = (
   </svg>
 );
 
-const chipAvailable = (
+const chipAvailable: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -439,7 +455,7 @@ const chipAvailable = (
   </svg>
 );
 
-const chipMounted = (
+const chipMounted: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -474,7 +490,7 @@ const chipMounted = (
   </svg>
 );
 
-const soulAvailable = (
+const soulAvailable: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -546,7 +562,7 @@ const soulAvailable = (
   </svg>
 );
 
-const soulMounted = (
+const soulMounted: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -626,7 +642,7 @@ const soulMounted = (
   </svg>
 );
 
-const femaleDesignAvailable = (
+const femaleDesignAvailable: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -658,7 +674,7 @@ const femaleDesignAvailable = (
   </svg>
 );
 
-const femaleDesignMounted = (
+const femaleDesignMounted: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -690,7 +706,7 @@ const femaleDesignMounted = (
   </svg>
 );
 
-const maleDesignAvailable = (
+const maleDesignAvailable: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -722,7 +738,7 @@ const maleDesignAvailable = (
   </svg>
 );
 
-const maleDesignMounted = (
+const maleDesignMounted: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -754,7 +770,7 @@ const maleDesignMounted = (
   </svg>
 );
 
-const femaleFrontAvailable = (
+const femaleFrontAvailable: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -786,7 +802,7 @@ const femaleFrontAvailable = (
   </svg>
 );
 
-const femaleFrontMounted = (
+const femaleFrontMounted: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -818,7 +834,7 @@ const femaleFrontMounted = (
   </svg>
 );
 
-const maleFrontAvailable = (
+const maleFrontAvailable: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -850,7 +866,7 @@ const maleFrontAvailable = (
   </svg>
 );
 
-const maleFrontMounted = (
+const maleFrontMounted: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -882,7 +898,7 @@ const maleFrontMounted = (
   </svg>
 );
 
-const femaleDesignUnready = (
+const femaleDesignUnready: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -914,7 +930,7 @@ const femaleDesignUnready = (
   </svg>
 );
 
-const femaleFrontUnready = (
+const femaleFrontUnready: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -946,7 +962,7 @@ const femaleFrontUnready = (
   </svg>
 );
 
-const maleDesingUnready = (
+const maleDesingUnready: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -978,7 +994,7 @@ const maleDesingUnready = (
   </svg>
 );
 
-const maleFrontUnready = (
+const maleFrontUnready: JSX.Element = (
   <svg
     width="236"
     height="320"
@@ -1010,7 +1026,7 @@ const maleFrontUnready = (
   </svg>
 );
 
-export const handD = (
+export const handD: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -1042,7 +1058,7 @@ export const handD = (
   </svg>
 );
 
-export const chipD = (
+export const chipD: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -1069,7 +1085,7 @@ export const chipD = (
   </svg>
 );
 
-export const soulD = (
+export const soulD: JSX.Element = (
   <svg
     width="48"
     height="48"
@@ -1141,7 +1157,7 @@ export const soulD = (
   </svg>
 );
 
-export const coin = (
+export const coin: JSX.Element = (
   <svg
     width="43"
     height="52"
@@ -1172,7 +1188,7 @@ export const coin = (
   </svg>
 );
 
-export const stockImg: any = {
+export const stockImg: StockData = {
   hands: {
     0: handAvailable,
     1: handMounted,
@@ -1187,7 +1203,7 @@ export const stockImg: any = {
   },
 };
 
-export const robotsUnready: any = {
+export const robotsUnready: StockData = {
   0: {
     0: femaleDesignUnready,
     1: femaleFrontUnready,
@@ -1199,7 +1215,7 @@ export const robotsUnready: any = {
   },
 };
 
-export const robotsReady: any = {
+export const robotsReady: StockImgsLarger = {
   0: {
     0: {
       0: femaleDesignAvailable,

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { AppContext } from "../AppContext";
 import "../styles/Storage.scss";
 
-const Storage = () => {
+const Storage: React.FC = () => {
   let {
     money,
     setMoney,

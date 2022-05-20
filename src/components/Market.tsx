@@ -3,7 +3,7 @@ import "./../styles/Market.scss";
 import { AppContext } from "../AppContext";
 import { market } from "./AppStorage";
 
-const Market = () => {
+const Market: React.FC = () => {
   let { money, setMoney, hands, setHands, chips, setChips, souls, setSouls } =
     useContext(AppContext);
   const getHand = () => {

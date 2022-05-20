@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../AppContext";
 import { coin } from "./AppStorage";
 
-const Modal1 = () => {
+const Modal1: React.FC = () => {
   const { modalActive1, setModalActive1 } = useContext(AppContext);
   return (
     <div className={modalActive1 ? "modal1Active" : "modal1Disabled"}>

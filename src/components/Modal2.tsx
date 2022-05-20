@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../AppContext";
 import "../styles/Modals.scss";
 
-const Modal2 = () => {
+const Modal2: React.FC = () => {
   let { modalActive2, setModalActive2 } = useContext(AppContext);
 
   return (
