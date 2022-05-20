@@ -67,6 +67,7 @@
     z-index: 0;
     margin-left: 9px;
     min-height: 30px;
+
     svg {
       height: 20px;
       width: 16px;
@@ -74,8 +75,14 @@
       text-align: right;
       animation: jump 0.5s cubic-bezier(0.49, 0.19, 0.31, 1.25);
       animation-iteration-count: 1.1;
+
       &:nth-of-type(1) {
         animation-delay: 0.1s;
+      }
+
+      &:hover {
+        animation: rubberBand 1s;
+        color: #ffd700;
       }
     }
   }
